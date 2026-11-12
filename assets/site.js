@@ -2,6 +2,7 @@
 (function () {
   var PAGES = [
     ["index.html", "Home"],
+    ["schools.html", "Find your school"],
     ["gallery.html", "Gallery"],
     ["tickets.html", "Tickets"],
     ["info.html", "Event info"],
@@ -9,6 +10,7 @@
   ];
   var here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   if (here === "") here = "index.html";
+  if (here.indexOf("school-") === 0) here = "schools.html"; // a school's own page sits under "Find your school"
 
   var links = PAGES.map(function (p) {
     return '<a href="' + p[0] + '"' + (p[0] === here ? ' aria-current="page"' : "") + ">" + p[1] + "</a>";

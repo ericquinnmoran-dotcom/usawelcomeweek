@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=7">
+<link rel="stylesheet" href="assets/site.css?v=9">
 </head>
 <body>
 <header class="site-head" id="site-head"></header>
@@ -19,14 +19,31 @@
     <div class="wrap">
       <div class="hero-copy">
         <img class="hero-logo" src="assets/logo.png" alt="USA Welcome Week" width="720" height="448">
-        <h1>Welcome week parties for incoming college students.</h1>
+        <h1>Welcome week parties for incoming college students, school by school.</h1>
         <p>All white dress code. 18+ to get in. 10 PM to 2 AM at a venue near campus.</p>
         <div class="hero-cta">
-          <a class="btn btn-red" href="gallery.html">See the photos <span class="arr" aria-hidden="true">&rarr;</span></a>
-          <a class="btn btn-line" href="info.html">Event info</a>
+          <a class="btn btn-red" href="schools.html">Find your school <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="gallery.html">See the photos</a>
         </div>
       </div>
       <div class="reel" id="reel" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label"><b>/</b> Find your school</span>
+          <h2>Every school has its own party. Find yours.</h2>
+        </div>
+        <a class="btn btn-line" href="schools.html">See all schools <span class="arr" aria-hidden="true">&rarr;</span></a>
+      </div>
+      <form class="home-search" id="school-form" action="schools.html" method="get" role="search">
+        <label class="sr" for="home-q">Search for your school</label>
+        <input id="home-q" name="q" type="search" placeholder="Type your school or city" autocomplete="off" spellcheck="false">
+        <button class="btn btn-red" type="submit">Find my school <span class="arr" aria-hidden="true">&rarr;</span></button>
+      </form>
     </div>
   </section>
 
@@ -66,8 +83,8 @@
 
 <footer class="site-foot" id="site-foot"></footer>
 
-<script src="assets/site.js?v=7"></script>
-<script src="assets/photos.js?v=7"></script>
+<script src="assets/site.js?v=9"></script>
+<script src="assets/photos.js?v=9"></script>
 <script>
 (function () {
   var P = window.PHOTOS || [], K = window.PICKS || {};
