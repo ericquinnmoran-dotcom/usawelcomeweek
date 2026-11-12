@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event info | USA Welcome Week</title>
+<meta name="description" content="Dress code, age, hours and venues for USA Welcome Week events.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=6">
+</head>
+<body>
+<header class="site-head" id="site-head"></header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <span class="label"><b>/</b> Event info</span>
+      <h1>Important information about our events.</h1>
+      <p>Read this before you come out. It covers what to wear, who gets in and when to show up.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap two">
+      <div>
+        <div class="section-head"><div><span class="label"><b>/</b> The basics</span><h2>Every White Out works the same way.</h2></div></div>
+        <dl class="rows">
+          <div class="row"><dt>Dress code</dt><dd>All white, head to toe.<span>It is strict at the door. If you are not in white, you may not get in.</span></dd></div>
+          <div class="row"><dt>Age</dt><dd>18+ to get in. 21+ to drink.<span>Every event is 18+.</span></dd></div>
+          <div class="row"><dt>ID</dt><dd>Bring valid ID.<span>You will be asked for it at the door.</span></dd></div>
+          <div class="row"><dt>Hours</dt><dd>10 PM to 2 AM.</dd></div>
+          <div class="row"><dt>Where</dt><dd>A bar or venue near campus.<span>Each school has its own night and its own venue.</span></dd></div>
+          <div class="row"><dt>Who can come</dt><dd>All students.<span>Your hometown friends are welcome too.</span></dd></div>
+          <div class="row"><dt>Music</dt><dd>Open format. A bit of everything.<span>Requests are taken.</span></dd></div>
+        </dl>
+      </div>
+      <div class="side-photo" id="side-photo"></div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="label"><b>/</b> More</span><h2>Still have a question?</h2></div>
+        <a class="btn btn-red" href="faq.html">Read the FAQ <span class="arr" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot" id="site-foot"></footer>
+<script src="assets/site.js?v=6"></script>
+<script src="assets/photos.js?v=6"></script>
+<script>
+(function () {
+  var K = window.PICKS || {}, P = window.PHOTOS || [];
+  var id = K.info || (P[5] || [])[0];
+  if (id) document.getElementById("side-photo").innerHTML = '<img src="' + UWW.full(id) + '" alt="Students at a USA Welcome Week event" loading="lazy">';
+})();
+</script>
+</body>
+</html>

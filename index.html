@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USA Welcome Week</title>
+<meta name="description" content="Welcome week parties for incoming college students. Photos, event info and tickets.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=6">
+</head>
+<body>
+<header class="site-head" id="site-head"></header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <img class="hero-logo" src="assets/logo.png" alt="USA Welcome Week" width="720" height="448">
+        <h1>Welcome week parties for incoming college students.</h1>
+        <p>All white dress code. 18+ to get in. 10 PM to 2 AM at a venue near campus.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="gallery.html">See the photos <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="info.html">Event info</a>
+        </div>
+      </div>
+      <div class="reel" id="reel" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label"><b>/</b> Before you go</span>
+          <h2>What to know about the night.</h2>
+        </div>
+        <a class="btn btn-line" href="faq.html">All questions <span class="arr" aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="cells">
+        <div class="cell"><span class="label">Dress code</span><strong>All white</strong><p>Head to toe. It is checked at the door.</p></div>
+        <div class="cell"><span class="label">Age</span><strong>18+ to get in</strong><p>21+ to drink. Bring valid ID.</p></div>
+        <div class="cell"><span class="label">Hours</span><strong>10 PM to 2 AM</strong><p>At a venue near campus.</p></div>
+        <div class="cell"><span class="label">Who can come</span><strong>All students</strong><p>Your hometown friends are welcome too.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"><div class="strip-track" id="strip"></div></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label"><b>/</b> Gallery</span>
+          <h2><span id="total-count"></span> photos from our events.</h2>
+        </div>
+        <a class="btn btn-red" href="gallery.html">Open the gallery <span class="arr" aria-hidden="true">&rarr;</span></a>
+      </div>
+      <a class="wall" id="wall" href="gallery.html" aria-label="Open the gallery"></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot" id="site-foot"></footer>
+
+<script src="assets/site.js?v=6"></script>
+<script src="assets/photos.js?v=6"></script>
+<script>
+(function () {
+  var P = window.PHOTOS || [], K = window.PICKS || {};
+  var byId = {}; P.forEach(function (p) { byId[p[0]] = p; });
+  function img(id, eager) {
+    var p = byId[id]; if (!p) return "";
+    return '<img src="' + UWW.thumb(id) + '" width="' + p[1] + '" height="' + p[2] + '" alt="" ' + (eager ? "" : 'loading="lazy" ') + 'decoding="async">';
+  }
+  function ids(list, from, n) { return (list && list.length) ? list : P.slice(from, from + n).map(function (p) { return p[0]; }); }
+  document.getElementById("total-count").textContent = P.length.toLocaleString("en-US");
+
+  // hero: three drifting columns (each list doubled so the loop is seamless)
+  var cols = [[], [], []];
+  ids(K.hero, 0, 18).forEach(function (id, i) { cols[i % 3].push(id); });
+  document.getElementById("reel").innerHTML = cols.map(function (c) {
+    var h = c.map(function (id) { return img(id, true); }).join("");
+    return '<div class="reel-col">' + h + h + "</div>";
+  }).join("");
+
+  var s = ids(K.strip, 18, 16).map(function (id) { return img(id, false); }).join("");
+  document.getElementById("strip").innerHTML = s + s;
+
+  document.getElementById("wall").innerHTML = ids(K.wall, 34, 12).map(function (id) { return "<span>" + img(id, false) + "</span>"; }).join("");
+})();
+</script>
+</body>
+</html>
