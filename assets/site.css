@@ -352,3 +352,7 @@ dl { margin: 0; }
 .wall-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
 @media (max-width: 900px) { .wall-8 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .home-search { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+.school em { font-style: normal; font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.06em; color: #fff; background: rgba(42, 99, 196, 0.35); border: 1px solid rgba(42, 99, 196, 0.7); border-radius: 4px; padding: 2px 6px; margin-left: 6px; white-space: nowrap; vertical-align: 2px; transition: background 0.2s ease, border-color 0.2s ease; }
+.school:hover em { background: var(--red); border-color: var(--red); }
+#q-hint { margin-block: 18px -8px; }
